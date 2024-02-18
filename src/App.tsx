@@ -26,7 +26,7 @@ function App() {
     axios.post<Res>("http://localhost:3030/login", cred).then((res) => {
       if (!res.data.err_id) {
         if (res.data.data) {
-          console.log(res.data.data);
+          
           localStorage.setItem("token", res.data.data['token'] as string)
           navigate("/home", { state: { name: res.data.data['email'] } })
 
@@ -38,7 +38,6 @@ function App() {
   }
   const googleapi=()=>{
     axios.get("http://localhost:3030/Oauthreq").then((res)=>{
-        console.log(res.data.url)
         window.location.href=res.data.url;
     })
   }
