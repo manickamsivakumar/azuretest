@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer, useContext, useMemo, createContext } from 'react'
+import React, { useState, useReducer} from 'react'
 import Test1 from './Test1'
 type state = {
     "btn1": boolean,
@@ -13,13 +13,11 @@ function reducer(state: state, action: action): state {
     switch (action.type) {
         case 'btn1':
             return { 'btn1': true,'btn2': false,'btn3': false };
-            break;
         case 'btn2':
             return { 'btn1': false,'btn2': true,'btn3': false };
-            break;
         case 'btn3':
             return { 'btn1': false,'btn2': false,'btn3': true };
-            break;
+    
         default:
             return state;
     }
