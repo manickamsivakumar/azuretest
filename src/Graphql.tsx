@@ -9,6 +9,7 @@ const schema=gql`query {
   }
 }`;
 const {data}=useQuery(schema);
+  console.log(data);
 return (
     <div>Graphql</div>
   )
